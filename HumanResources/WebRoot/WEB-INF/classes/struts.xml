@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 指定全局国际化资源文件BaseName为messageResource -->
+	<constant name="struts.custom.i18n.resources" value="zl"></constant>
+	<package name="action" namespace="/" extends="struts-default">
+
+		<action name="yanZhengMa">
+			<result name="success">/YanZhengMaAction</result>
+		</action>
+
+		<action name="mainPages">
+			<result name="success">/pages/mainPages.jsp</result>
+		</action>
+		<!-- 头部 -->
+		<action name="head">
+			<result name="success">/pages/top.jsp</result>
+		</action>
+		<!--
+			身体 <action name="body"> <result
+			name="success">/pages/login.jsp</result> </action>
+		-->
+		<!-- 身体2 -->
+		<action name="menu">
+			<result name="success">/pages/menu.jsp</result>
+		</action>
+		<!-- 身体2 -->
+		<action name="enter1">
+			<result name="success">/pages/mainPages1.jsp</result>
+		</action>
+		<!-- 身体2 -->
+		<action name="b">
+			<result name="success">/pages/administerMan.jsp</result>
+		</action>
+		<!-- 底部 -->
+		<action name="below">
+			<result name="success">/pages/below.jsp</result>
+		</action>
+		<!-- 管理员 -->
+		<action name="login">
+			<result name="success">/pages/loginAdminister.jsp</result>
+		</action>
+		<action name="loginAdminister"
+			class="action.LoginAdministerAction">
+			<result name="success">/pages/mainPages.jsp</result>
+			<result name="error">/pages/loginAdminister.jsp</result>
+		</action>
+		<!-- 员工 -->
+		<action name="login1">
+			<result name="success">/pages/loginEmployee.jsp</result>
+		</action>
+
+
+		<action name="loginEmployee"
+			class="action.LoginAdministerAction">
+			<result name="success">/pages/employeeMan.jsp</result>
+			<result name="error">/pages/loginEmployee.jsp</result>
+		</action>
+
+		<!-- 注册员工 -->
+		<action name="addEmploye">
+			<result name="success">/pages/addEmploye.jsp</result>
+		</action>
+
+		<action name="addSaveElployess"
+			class="action.AddElployessAction">
+			<result name="error">/pages/addEmploye.jsp</result>
+			<result name="success">/pages/ok.jsp</result>
+		</action>
+		<!-- 部门 -->
+		<action name="bumeng" class="action.SelectAllBuMen">
+			<result name="success">/pages/AddBuMen.jsp</result>
+			<result name="error">/pages/AddBuMen.jsp</result>
+		</action>
+		<action name="BUmen" class="action.BuMenAction">
+			<result name="error">/pages/AddBuMenTian.jsp</result>
+			<result name="success">/pages/AddBuMen.jsp</result>
+		</action>
+
+		<action name="tosave">
+			<result name="success">/pages/AddBuMenTian.jsp</result>
+		</action>
+
+		<action name="delet" class="action.DeleteBuMen">
+			<result name="success" type="chain">bumeng</result>
+			<result name="error" type="chain">bumeng</result>
+		</action>
+		<!-- 部门 -->
+		<action name="zhiwug" class="action.SelectAllBuMen">
+			<result name="success">/pages/Addzhiwu.jsp</result>
+		</action>
+
+		<action name="ZhiWuz" class="action.AddZhiWuAction">
+			<result name="error">/pages/Addzhiwu.jsp</result>
+			<result name="success">/pages/ok.jsp</result>
+		</action>
+		<!-- 查询部门下的职务 -->
+		<action name="selectbumenkong" class="action.SelectzhiwuKong">
+			<result name="success">/pages/SelectzhiwuWang.jsp</result>
+			<result name="error" type="chain">zhiwug</result>
+		</action>
+		<!-- 跳转到添加职务页面 -->
+		<action name="AddzhiwuKong">
+			<result name="success">/pages/addKong.jsp</result>
+		</action>
+		<!-- 执行添加职务 -->
+		<action name="addKong" class="action.AddzhiwuKong">
+			<result name="error">/pages/addKong.jsp</result>
+			<result name="success">/pages/addKong.jsp</result>
+		</action>
+		<!-- 查询出的考勤人员信息显示在修改界面上 -->
+		<action name="updatex" class="action.ToupdateKaoQin">
+			<result name="success">/pages/UpdateKaoQin.jsp</result>
+		</action>
+		<action name="UpdateKao" class="action.UpdateKaoQin">
+			<result name="success" type="chain">assessmanage</result>
+		</action>
+
+		<action name="delett">
+			<result name="success">/pages/Deletezhiwu.jsp</result>
+		</action>
+
+
+
+
+		<action name="deletezhiwu" class="action.DeleteZhiWuAction">
+			<result name="error">/pages/SelectzhiwuWang.jsp</result>
+			<result name="success" type="chain">selectbumenkong</result>
+		</action>
+
+
+
+
+		<!-- 田宏勇 -->
+		<!-- 点击考勤管理 -->
+		<action name="KaoPing">
+			<result name="success">/pages/Assmetter.jsp</result>
+		</action>
+		<!-- 添加考评原因Action -->
+		<action name="Assmetter1" class="action.AssmetterAction">
+			<result name="success">/pages/ok.jsp</result>
+			<result name="error">/pages/Assmetter.jsp</result>
+		</action>
+		<!-- 添加考评返回 -->
+		<action name="result">
+			<result name="success">/pages/administerMan.jsp</result>
+		</action>
+		<!--
+			考评ok.jsp返回 <action name="blackAdd">
+			<result>/pages/Assmetter.jsp</result> </action>
+		-->
+
+		<!-- 考评查询Action -->
+		<action name="assessmanage"
+			class="action.employessAssessAction">
+			<result name="success">/pages/assessmanage.jsp</result>
+			<result name="error">/pages/assessmanage.jsp</result>
+		</action>
+
+		<action name="delets" class="action.DeleteKaoQin">
+			<result name="success">/pages/assessmanage.jsp</result>
+			<result name="error">/pages/assessmanage.jsp</result>
+		</action>
+
+		<!-- 查询返回 -->
+		<action name="result1" class="action.employessAssessAction">
+			<result name="success">/pages/Assmetter.jsp</result>
+		</action>
+
+		<!-- 培训管理主界面 -->
+		<action name="toTrainmetter">
+			<result name="success">/pages/assesschaxun.jsp</result>
+		</action>
+		<!-- 管理培训 -->
+		<action name="assesschaxun1"
+			class="action.employessTrainAction">
+			<result name="success">/pages/assesschaxun.jsp</result>
+			<result name="error">/pages/assesschaxun.jsp</result>
+		</action>
+		<!-- 考勤查询返回 -->
+
+		<action name="exit">
+			<result>/pages/administerMan.jsp</result>
+		</action>
+		<!-- 培训管理添加界面 -->
+		<action name="Trainmetter">
+			<result name="success">/pages/Trainmetter.jsp</result>
+		</action>
+		<!-- 培训添加Action -->
+		<action name="addSave" class="action.AddAdministerManAction">
+			<result name="success">/pages/ok.jsp</result>
+			<result name="error">/pages/Trainmetter.jsp</result>
+		</action>
+
+		<action name="yuanyin">
+			<result name="success">/pages/Trainmetter.jsp</result>
+		</action>
+		<!-- 培训添加返回 -->
+		<action name="administerMan">
+			<result>/pages/assesschaxun.jsp</result>
+		</action>
+		<action name="assessmanage1"
+			class="action.employessAssessAction">
+			<result name="success">/pages/assessmanage.jsp</result>
+			<result name="error">/pages/assessmanage.jsp</result>
+		</action>
+		<action name="assesschaxun1"
+			class="action.employessTrainAction">
+			<result name="success">/pages/assesschaxun.jsp</result>
+			<result name="error">/pages/assesschaxun.jsp</result>
+		</action>
+
+		<!-- 田宏勇做完 -->
+		<!-- 李石峰 -->
+		<!-- 调薪查询界面 -->
+		<action name="prize">
+			<result name="success">/pages/prize.jsp</result>
+		</action>
+
+		<!-- 调薪查询-->
+		<action name="paychaxuna" class="action.PayChaXunAction">
+			<result name="success">/pages/prize.jsp</result>
+			<result name="error">/pages/prize.jsp</result>
+		</action>
+
+		<!-- 修改工资（调薪）-->
+		<action name="updateGongzhi"
+			class="action.SelectGongZiAction">
+			<result>/pages/updategongzi.jsp</result>
+		</action>
+		<!-- 删除工资 -->
+		<action name="deleteGongzhi"
+			class="action.DeleteGongZiAction">
+			<result name="success">/pages/wagemanageOnly.jsp</result>
+			<result name="error">/pages/wagemanageOnly.jsp</result>
+		</action>
+		<action name="updateGZ" class="action.UpdateGongZiAction">
+			<result name="success">/pages/updategongzi.jsp</result>
+		</action>
+		<!-- 添加工资 查询-->
+		<action name="addGongziSelect" class="action.AddGZSelectAction">
+			<result>/pages/addgongzi.jsp</result>
+		</action>
+		<!-- 添加工资-->
+		<action name="addgongZi" class="action.AddGongZiAction">
+			<result name="success">/pages/addgongzi.jsp</result>
+			<result name="error">/pages/addgongzi.jsp</result>
+		</action>
+		<action name="wagemanageOnly">
+			<result>/pages/wagemanageOnly.jsp</result>
+
+		</action>
+		<!-- 单个调薪记录查询 -->
+		<action name="selectOnly" class="action.OnlyZhiwuAction">
+			<result name="success">/pages/wagemanageOnly.jsp</result>
+			<result name="error">/pages/wagemanageOnly.jsp</result>
+		</action>
+
+		<!-- 奖惩管理 -->
+		<action name="paychaxun">
+			<result name="success">/pages/pay.jsp</result>
+		</action>
+
+		<action name="SelectPayAction" class="action.SelectPayAction">
+			<result name="success">/pages/pay.jsp</result>
+			<result name="error">/pages/pay.jsp</result>
+		</action>
+
+		<!-- 添加奖惩界面 -->
+		<action name="jiangcheng">
+			<result name="success">/pages/jiangcheng.jsp</result>
+		</action>
+
+		<!-- 添加奖惩 -->
+		<action name="JiangchengAction"
+			class="action.JiangchengAction">
+			<result name="success">/pages/jiangcheng.jsp</result>
+			<result name="error">/pages/jiangcheng.jsp</result>
+		</action>
+		<!-- 修改奖惩 -->
+		<action name="updateJiangCheng"
+			class="action.SelectJiangChengAction">
+			<result name="success">/pages/updateJiangCheng.jsp</result>
+		</action>
+		<!-- 删除奖惩-->
+		<action name="deleteJiangChengKong"
+			class="action.DeleteJangCheng">
+			<result name="success">/pages/pay.jsp</result>
+			<result name="error">/pages/pay.jsp</result>
+		</action>
+		<!-- 到添加单一人员奖惩页面 -->
+		<action name="addJiangChengKong"
+			class="action.SelectJiangChengKong">
+			<result name="success">/pages/hitoriJiangCheng.jsp</result>
+		</action>
+		<!-- 提交修改奖惩 -->
+		<action name="UpdateJiangCheng"
+			class="action.UpdateJiangChengAction">
+			<result name="success">/pages/updateJiangCheng.jsp</result>
+			<result name="error">/pages/updateJiangCheng.jsp</result>
+		</action>
+		<!-- 添加奖惩 -->
+		<action name="JiangchengAction"
+			class="action.JiangchengAction">
+			<result name="success">/pages/jiangcheng.jsp</result>
+			<result name="error">/pages/jiangcheng.jsp</result>
+		</action>
+		<!-- 添加单一奖惩 -->
+		<action name="hitoriKongAdd"
+			class="action.AddHitoriJiangcheng">
+			<result name="success">/pages/jiangcheng.jsp</result>
+			<result name="error">/pages/jiangcheng.jsp</result>
+		</action>
+
+		<!-- 李畔做 -->
+		<!-- 返回 -->
+		<action name="back">
+			<result>/pages/business.jsp</result>
+		</action>
+		<!-- 事物查询界面 -->
+		<action name="business">
+			<result name="success">/pages/business.jsp</result>
+		</action>
+		<!-- 事物查询Action -->
+		<action name="business1" class="action.BusinessAction">
+			<result name="success">/pages/business.jsp</result>
+		</action>
+		<!-- 删除人事 -->
+		<action name="deleteRenShi" class="action.DeleteRenShiAction">
+			<result name="success">/pages/RenShiDemand.jsp</result>
+		</action>
+		<!-- 人事调动查询界面 -->
+		<action name="RenShiDemand">
+			<result>/pages/RenShiDemand.jsp</result>
+		</action>
+		<action name="demand" class="action.RenShiDemandAction">
+			<result name="success">/pages/RenShiDemand.jsp</result>
+			<result name="error">/pages/RenShiDemand.jsp</result>
+		</action>
+		<!-- 返回employeeMan.jsp -->
+		<action name="fanhui">
+			<result>/pages/administerMan.jsp</result>
+		</action>
+		<!--修改员工界面-->
+		<action name="updateEmploye">
+			<result name="success">/pages/updateEmploye.jsp</result>
+		</action>
+
+
+		<!-- 修改员工前查询 -->
+		<action name="business2" class="action.BusinessAction">
+			<result name="success">/pages/updateEmploye.jsp</result>
+		</action>
+		<!-- 修改员工Action -->
+		<action name="update" class="action.UpdateBusinessAction">
+
+			<!-- 配置fileUpload的拦截器 -->
+			<interceptor-ref name="fileUpload">
+				<!-- 配置允许上传的文件类型 -->
+				<param name="allowedTypes">
+					image/bmp,image/png,image/x-png,image/gif,image/jpeg,image/pjpeg
+				</param>
+				<param name="maximumSize">100000</param>
+			</interceptor-ref>
+			<!-- 配置系统默认拦截器 -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<!-- 动态设置Action的属性植 -->
+			<param name="savePath">/upload</param>
+			<!-- 配置input逻辑视图对应的视图页面 -->
+			<result name="input">/pages/business.jsp</result>
+			<result name="error">/pages/business.jsp</result>
+			<result name="success">/pages/ok.jsp</result>
+		</action>
+
+		<!--删除员工-->
+		<action name="deleteEmploye">
+			<result name="success">/pages/deleteEmploye.jsp</result>
+		</action>
+		<!-- 删除前查询 -->
+		<action name="deleteYg" class="action.BusinessAction">
+			<result name="success">/pages/deleteEmploye.jsp</result>
+		</action>
+		<!-- 删除Action -->
+		<action name="deleteok" class="action.DeleteBusiness">
+			<result name="success">/pages/ok.jsp</result>
+			<result name="error">/pages/business.jsp</result>
+		</action>
+
+		<!-- 添加员工界面 -->
+		<action name="addUser">
+			<result>/pages/addUser.jsp</result>
+		</action>
+		<!-- 添加员工Action -->
+		<action name="addYuanGong"
+			class="action.Employees_InformationAction">
+			<!-- 配置fileUpload的拦截器 -->
+			<interceptor-ref name="fileUpload">
+				<!-- 配置允许上传的文件类型 -->
+				<param name="allowedTypes">
+					image/bmp,image/png,image/x-png,image/gif,image/jpeg,image/pjpeg
+				</param>
+				<param name="maximumSize">100000</param>
+			</interceptor-ref>
+			<!-- 配置系统默认拦截器 -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<!-- 动态设置Action的属性植 -->
+			<param name="savePath">/upload</param>
+			<!-- 配置input逻辑视图对应的视图页面 -->
+			<result name="input">/pages/addUser.jsp</result>
+			<result name="success">/pages/ok.jsp</result>
+			<result name="error">/pages/addUser.jsp</result>
+		</action>
+		<!-- 主界面 -->
+		<action name="zhujie">
+			<result name="success">/pages/login.jsp</result>
+		</action>
+
+		<!-- 李畔做完 -->
+
+		<!--韩晶 -->
+		<!-- 模糊信息查询 -->
+		<action name="mohu">
+			<result name="success">/pages/employe.jsp</result>
+		</action>
+		<!-- 模糊查询 -->
+		<action name="chaxu"
+			class="action.TOSelectEmployees_InformationAction">
+			<result name="success">/pages/result.jsp</result>
+			<result name="error">/pages/employe.jsp</result>
+		</action>
+
+
+		<!-- 修改密码 -->
+		<action name="updatePassword">
+			<result>/pages/updatePassword.jsp</result>
+		</action>
+		<action name="DoupdatePassword"
+			class="action.UpdatePasswordAction">
+			<result name="error">/pages/updatePassword.jsp</result>
+			<result name="success">/pages/ok.jsp</result>
+		</action>
+
+		<!-- 修改工资 -->
+		<action name="updatewage">
+			<result name="success">/pages/updatewage.jsp</result>
+			<result name="error">/page/updatewageerror.jsp</result>
+		</action>
+		<!-- 插入工资 -->
+		<action name="insert">
+			<result name="success">/pages/insertwage.jsp</result>
+			<result name="error">/page/insertwageerror.jsp</result>
+		</action>
+		<!-- 删除普通管理员 -->
+		<action name="deleteEmployess" class="action.SelectEmployess">
+			<result name="success">/pages/DeleteEmployessPT.jsp</result>
+			<result name="error">/pages/abc.jsp</result>
+		</action>
+		<action name="le" class="action.SelectEmployess">
+			<result name="success">/pages/DeleteEmployessPT.jsp</result>
+		</action>
+		<action name="toDeleteEmployee"
+			class="action.DeleteUserAction">
+			<result name="error">/pages/DeleteEmployessPT.jsp</result>
+			<result name="success">/pages/ok.jsp</result>
+		</action>
+
+		<action name="todelete" class="action.DeleteTiaoXin">
+			<result name="error">/pages/wagemanage.jsp</result>
+			<result name="success">/pages/ok.jsp</result>
+		</action>
+		<action name="exitchu">
+			<result name="success">/exit.jsp</result>
+		</action>
+	</package>
+</struts>

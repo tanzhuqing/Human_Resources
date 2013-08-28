@@ -1,0 +1,231 @@
+/* CSS Document */
+
+body {
+	margin:0px;
+	font-size: 11px;
+	font-family: Verdana, Arial, SunSans-Regular, Sans-Serif;
+	color:black;
+	padding:0px;
+	background-color:#d8e7ef;
+}
+#header {
+	padding: 0px;
+	margin: 0px;
+	border-bottom-color:#d8e7ef;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	margin-top: 10px;/*新加的*/
+}
+#status {
+	background-color:#003399;
+	border-bottom-color:#00ff00;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	text-align:right;
+	line-height:30px;
+	color:#ffffff;
+	height:30px;
+	font-size:14px;
+	padding-right:8px;
+}
+#container {
+	background-color:#cccccc;
+	margin:0px;
+	width:100%;
+}
+*+div #leftmenu {
+	background-color:#5271bd;
+	border-right-color:#000000;
+	border-right-style:solid;
+	border-right-width:1px;
+	text-align:left;
+	/*height:expression(this.scrollHeight>453?"auto":"453px");*/
+	min-height:444px;
+	width:200px;
+	padding-left:20px;
+	padding-top:10px;
+	float:left;
+}
+*div #leftmenu {
+	background-color:#5271bd;
+	border-right-color:#000000;
+	border-right-style:solid;
+	border-right-width:1px;
+	text-align:left;
+	height:expression(this.scrollHeight>444?"auto":"444px");
+	min-height:444px;
+	width:200px;
+	padding-left:20px;
+	padding-top:10px;
+	float:left;
+}
+#leftmenu li {
+	list-style:none;
+	font-size:14px;
+	color:#ffffff;
+	padding:4px;
+}
+#main {
+	height:400px;
+	float:right;
+	overflow:hidden;
+	padding-left:30px;
+	padding-right:30px;
+	width:700px;
+}
+#footer {
+	color:#ffffff;
+	background-color:#5271bd;
+	padding-top:4px;
+	padding-bottom:4px;
+	border-top-color:#00ff00;
+	border-top-style:solid;
+	border-top-width:1px;
+	text-align:center;
+	clear:both;
+}
+#logina{
+	position:static;
+	margin-top:150px;
+}
+#logina img{
+	border:1px solid #903;
+}
+#loginb{
+	position:static;
+	border:1px solid #903;
+	margin:0px;
+	padding:5px 0px;
+	width:400px;
+	border-top:none;
+}
+#loginb input.text{
+	width:80px;
+	margin-left:0px;
+	margin-right:10px;
+}
+/*--------------------leftmenu link----------------------------------*/
+a.title:link { color:#ffffff;text-decoration:none;}
+a.title:visited { color:#ffffff;text-decoration:none;}
+a.title:hover { color:#FF9900;}
+a.title:active { color:#000000;}
+
+/*--------------------normal link----------------------------------*/
+a.normal:link { color: #003399;text-decoration:none;}
+a.normal:visited { color:#003399;text-decoration:none}
+a.normal:hover { color: #991a00;}
+a.normal:active { color:#000000;}
+
+h1 { 
+	font-size: 14px;
+	font-weight:normal;
+	padding-top:10px;
+	padding-bottom:5px;
+	margin:0px;
+}
+table {
+	background-color:#d8e7ef;
+	border-color:#990033;
+	border-width:0px;
+	border-style:solid;
+	border-collapse:collapse;
+	margin:0px;
+	text-align:center; 
+	color:#003399;
+}
+tr.title {
+	font-size:14px;
+	color:#ffffcc;
+	background-color:#5271bd;
+	font-weight:bold;
+}
+tr.dark	{
+	backgroud-color:#c3d6e6;
+}
+/*
+td {
+	border-color:#cccc99;
+	padding:3px;
+	line-height:18px;
+	font-size: 9pt;
+}*/
+
+td {
+	font-size: 9pt;	
+	line-height: 20px;
+	border-color: #183789;
+}
+
+legend { 
+	font-size: 14px;
+	padding-top:10px;
+	padding-bottom:5px;
+	margin:0px;
+	color:#000;
+	font-weight:bold;
+}
+form{
+	margin:0px;
+	padding:0px;
+}
+
+fieldset{
+	border:1px solid #903;
+	margin-bottom:10px;
+}
+fieldset div{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+label{
+	font-size:14px;
+	float:left;
+	width:6em;
+	margin-right:0;
+	text-align:right;
+	line-height:22px;
+}
+input{
+	margin:0px;
+	padding:0px;
+}
+.btn_2k3 {
+	width:80px;
+	BORDER-RIGHT: #002D96 1px solid; 
+	PADDING-LEFT: 2px; 
+	PADDING-RIGHT: 2px; 
+	BORDER-TOP: #002D96 1px solid; 
+	FONT-SIZE: 12px; 
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#FFFFFF, EndColorStr=#9DBCEA); 
+	BORDER-LEFT: #002D96 1px solid; 
+	CURSOR: hand; 
+	COLOR: black; 
+	PADDING-TOP: 2px;
+	BORDER-BOTTOM: #002D96 1px solid
+}
+
+.tableBorder1 {
+	width: 770;
+	border: 1px;
+	background-color: #6595D6;
+}
+
+td.TableBody1 {
+	background-color: #FFFFFF;
+	line-height: normal;
+}
+
+th {
+	background-image: url(../images/bg_line.gif);
+	background-color: #6699cc;
+	color: white;
+	font-size: 9pt;
+	font-weight: bold;
+}
+
+.top_tr {
+	BACKGROUND-IMAGE: url(../images/bg_line.gif);
+	font-size: 13pt;
+	color: #FFFFFF;
+	font: bold;	
+}
